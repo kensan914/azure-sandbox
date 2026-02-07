@@ -42,12 +42,32 @@
 （必要に応じて将来拡張は可）
 ---
 ## アプリケーション（仮）
-- **技術スタック**：Python + FastAPI
+- **技術スタック**：Python 3.14 + FastAPI + uv
 - **API仕様（想定）**：
 ```
 GET /
 → { "message": "Hello Azure Sandbox" }
+
+GET /health
+→ { "status": "healthy" }
 ```
+
+### ローカル開発
+```bash
+# Docker Composeで起動
+docker-compose up -d
+
+# APIの動作確認
+curl http://localhost:8000/
+curl http://localhost:8000/health
+
+# ログ確認
+docker-compose logs -f
+
+# 停止
+docker-compose down
+```
+
 ### App Service 方針
 - **コンテナ化は現時点では行わない**（PaaSとしての App Service を学ぶ）
     - ただし**将来的にコンテナ化へ移行する可能性がある**
