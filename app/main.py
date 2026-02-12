@@ -5,7 +5,7 @@ app = FastAPI(title="Azure Sandbox API")
 
 @app.get("/")
 async def root():
-    return {"message": "Hello Azure Sandbox"}
+    return {"message": "Hello Azure Sandbox!!!"}
 
 
 @app.get("/health")
