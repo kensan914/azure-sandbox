@@ -33,7 +33,7 @@ jobs:
 
       - name: Prepare standalone output
         run: |
-          cp -r public .next/standalone/public
+          [ -d public ] && cp -r public .next/standalone/public || true
           cp -r .next/static .next/standalone/.next/static
 
       - name: Upload artifact for deployment job
