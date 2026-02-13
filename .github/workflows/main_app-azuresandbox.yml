@@ -7,7 +7,7 @@ name: Build and deploy Python app to Azure Web App - app-azuresandbox
 on:
   push:
     branches:
-      - main
+      - xxx
   workflow_dispatch:
 
 jobs:
