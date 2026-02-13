@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
+    defaults:
+      run:
+        working-directory: api
 
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +41,7 @@ jobs:
         with:
           name: python-app
           path: |
-            .
+            api
             !antenv/
 
       # 🚫 Opting Out of Oryx Build
