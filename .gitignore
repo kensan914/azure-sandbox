@@ -21,6 +21,7 @@ wheels/
 *.egg
 
 # Virtual environments
+.env
 .venv/
 venv/
 ENV/
@@ -40,6 +41,12 @@ uv.lock
 # OS
 .DS_Store
 Thumbs.db
+
+# Node.js
+node_modules/
+
+# Next.js
+.next/
 
 # Azure
 .azure/

@@ -1,15 +1,34 @@
 services:
-  app:
-    container_name: azure_sandbox_app
+  api:
+    container_name: azure_sandbox_api
     build:
-      context: ./app
+      context: ./api
       dockerfile: Dockerfile
-    image: azure-sandbox-app:latest
+    image: azure-sandbox-api:latest
     pull_policy: never
     command: uv run fastapi dev main.py --host 0.0.0.0
     volumes:
-      - ./app:/app
+      - ./api:/app
     ports:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
+
+  web:
+    container_name: azure_sandbox_web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      target: dev
+    image: azure-sandbox-web:dev
+    pull_policy: never
+    command: npm run dev
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - API_BASE_URL=http://api:8000
+    depends_on:
+      - api
