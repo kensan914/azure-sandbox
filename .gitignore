@@ -50,3 +50,9 @@ node_modules/
 
 # Azure
 .azure/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan

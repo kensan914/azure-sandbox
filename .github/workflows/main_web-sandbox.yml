@@ -69,7 +69,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'web-sandbox'
+          app-name: 'app-azuresandbox-web'
           slot-name: 'Production'
           package: release
           startup-command: 'node server.js'

@@ -74,6 +74,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'api-sandbox'
+          app-name: 'app-azuresandbox-api'
           slot-name: 'Production'
           
